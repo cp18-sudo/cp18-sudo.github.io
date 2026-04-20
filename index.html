@@ -1,29 +1,356 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Christopher Prempeh | CS ePortfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christopher Prempeh — CS 499 Capstone ePortfolio</title>
+<meta name="description" content="CS 499 Computer Science Capstone ePortfolio — WeightTracker Android application enhancements across software design, algorithms, and databases.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>Christopher Prempeh</h1>
+<nav class="topnav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">Christopher Prempeh</a>
+    <ul>
+      <li><a href="#assessment">Assessment</a></li>
+      <li><a href="#code-review">Code Review</a></li>
+      <li><a href="#enhancements">Enhancements</a></li>
+      <li><a href="#downloads">Downloads</a></li>
+    </ul>
+  </div>
+</nav>
 
-<p>Capstone ePortfolio</p>
+<header id="top" class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">CS 499 Computer Science Capstone · Southern New Hampshire University</p>
+    <h1>Christopher<br>Prempeh</h1>
+    <p class="lede">A capstone ePortfolio built around one artifact across three enhancements: software design and engineering, algorithms and data structures, and databases.</p>
+    <div class="hero-meta">
+      <span>Spring 2026</span>
+      <span>·</span>
+      <span>WeightTracker Android Application</span>
+    </div>
+  </div>
+  <div class="hero-accent"></div>
+</header>
 
-<h2>About Me</h2>
-<p>
-This portfolio highlights projects and enhancements completed during my
-Computer Science program at SNHU. The work included here demonstrates
-skills in software engineering, algorithms and data structures, and databases.
-</p>
+<main>
 
-<h2>Artifacts</h2>
+<!-- =============================================================== -->
+<!-- PROFESSIONAL SELF-ASSESSMENT                                    -->
+<!-- =============================================================== -->
+<section id="assessment" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Professional Self-Assessment</h2>
+      <p class="section-sub">A reflection on the program, the portfolio, and what the two have shaped.</p>
+    </div>
+    <div class="prose">
+        <p>My name is Christopher Prempeh, and this is the professional self-assessment for my Computer Science Capstone at Southern New Hampshire University. I came to SNHU after earning my associate degree in computer science from Rowan-Cabarrus Community College, which means I have been studying computer science in some form for about four years. The time at SNHU in particular pushed me further than I expected. The upper-level courses were not just more of the same. They forced me to think about software as a system rather than a collection of files that happen to run, and I think that shift is what the ePortfolio I am introducing here is really about. What I have put together on this site is not a highlight reel of assignments. It is a demonstration of how I think about building software at this point in my education, and it is the best picture I can give of the kind of work I want to do professionally.</p>
+        <p>Throughout the program I have had the chance to work in small collaborative settings where communication about code mattered as much as the code itself. Group discussions in CS 250 on the software development lifecycle taught me that requirements change, teams change, and the value of clean documentation shows up long after you think you are done with a feature. My code review in this capstone is meant to reflect those lessons. It is not me performing a perfect walkthrough. It is me showing that I can analyze existing code, call out real weaknesses honestly, and explain my reasoning in a way another developer or a manager could actually follow. That skill carries over to stakeholder communication too. Writing the three enhancement narratives for this portfolio taught me that explaining a technical decision to someone who was not in the room for it requires removing jargon without losing substance. You have to respect the reader's time and still be accurate, which is harder than it sounds.</p>
+        <p>On the technical side, data structures and algorithms clicked for me the most clearly during CS 260 and again during my second capstone enhancement. For the second enhancement I built a TrendCalculator that turns a stream of raw weight entries into meaningful trend analysis. The original version of the app collected data but did nothing useful with it. The enhanced version uses a TreeMap to keep entries in chronological order, a sliding-window algorithm to produce O(n) rolling averages, and a threshold-based alert system that compares weekly changes against a healthy range. I chose TreeMap over HashMap on purpose, and I wrote the narrative to explain that trade-off out loud, because design choices are the part of the work I actually enjoy. I like understanding why one data structure fits the shape of the problem better than another, and I like writing code that shows that thinking is happening behind the scenes.</p>
+        <p>Software engineering and database work came together for me in this capstone in a way that I do not think any single course could have produced on its own. The first enhancement refactored my CS 360 mobile app from a monolithic Activity into a layered MVVM architecture with a Repository as the seam between the ViewModels and the Room database. That restructuring taught me something I had read about many times but not actually felt until I did it, which is that good architecture is mostly about making future changes less painful. The third enhancement proved the point. Adding a Goal entity, a userId foreign key on every weight row, a composite index, and salted password hashing touched every layer of the app, but because the layers already existed cleanly from the first enhancement, the changes were mechanical rather than chaotic. I also built a Robolectric test suite for the database layer so I could verify foreign key enforcement, user-scoped queries, and goal ordering without needing an emulator. Outside the WeightTracker artifact, my CS 350 coursework with the Raspberry Pi gave me hands-on experience with GPIO, PWM, UART serial communication, and a Morse code state machine, along with an AHT20 temperature sensor that pushed readings to an LCD display. That work was a useful counterpart to the mobile-app focus of my ePortfolio because it forced me to think about timing, hardware interrupts, and low-level state management, which is a different kind of engineering discipline.</p>
+        <p>Security has probably been the area where my thinking has changed the most over the program. When I started, I thought of security as a separate topic you studied in one class and checked off. CS 405 changed that for me, and my third capstone enhancement made it concrete. The original CS 360 app stored passwords as plain text, which is the kind of thing you do not notice as a student because everything still works on the surface. Replacing that with salted SHA-256 hashing through a dedicated PasswordHasher class, using MessageDigest.isEqual for constant-time comparison to reduce timing leakage, and adding foreign key constraints with cascade delete to prevent orphan data all felt like basic hygiene rather than advanced security work. That shift in perspective is what I think a security mindset actually means. It is not about being paranoid. It is about seeing where data can be misused or corrupted and designing with those risks in mind from the beginning.</p>
+        <p>My work experience in tech has reinforced many of the same ideas. I have spent time in environments where the difference between code that technically works and code that holds up in production comes down to whether anyone can read it six months later. That is part of why my capstone enhancements focus so heavily on structure, documentation, and tests rather than flashy features. I would rather demonstrate that I can build something another developer could inherit and extend than demonstrate that I can cram five new features into an already-crowded file. The jobs I want next are the ones where that way of thinking is rewarded, and the ePortfolio is meant to be evidence that it is already how I work.</p>
+        <p>The artifacts in this portfolio all come from the same source project, which was intentional. Using my CS 360 WeightTracker Android application for all three enhancement categories lets me show growth across software design, algorithms, and databases on a single system rather than showing isolated slices of three different projects. The first enhancement is the architectural foundation, turning an Activity-heavy app into a proper layered system with MVVM, a Repository, ViewModels, LiveData, single-consumption events, and centralized input validation. The second enhancement adds the TrendCalculator and its sliding-window algorithms, plugging into the architecture from the first enhancement without disrupting it. The third enhancement redesigns the database schema into the three tables the original CS 360 requirements actually called for, adds foreign keys and indexes, secures password storage, and wires user ownership through every layer. Taken together, the three enhancements tell one story about taking a basic class project and turning it into something that feels closer to a real application, with the trade-offs and decisions spelled out in the narratives. That is the full range of what I want this ePortfolio to communicate, and the pages that follow are where you can see the work itself.</p>
+    </div>
+    <div class="inline-download">
+      <a href="assets/downloads/CS499_Professional_Self_Assessment.docx" download>Download as Word document</a>
+    </div>
+  </div>
+</section>
 
-<ul>
-<li>Travlr Getaways – Software Engineering Enhancement</li>
-<li>Search & Sorting System – Algorithms Enhancement</li>
-<li>MongoDB Optimization – Database Enhancement</li>
-</ul>
+<!-- =============================================================== -->
+<!-- CODE REVIEW VIDEO                                               -->
+<!-- =============================================================== -->
+<section id="code-review" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Informal Code Review</h2>
+      <p class="section-sub">A walkthrough of the original WeightTracker, the weaknesses I found, and the enhancements I built on top of it.</p>
+    </div>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/q8Pq-gcQMpo"
+        title="CS 499 Code Review"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <div class="video-meta">
+      <a href="https://youtu.be/q8Pq-gcQMpo" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+      <span>·</span>
+      <a href="assets/downloads/CS_499_Final_Code_Review.pptx" download>Download slides (.pptx)</a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== -->
+<!-- THE ARTIFACT                                                    -->
+<!-- =============================================================== -->
+<section id="artifact" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>The Artifact</h2>
+      <p class="section-sub">WeightTracker is an Android app originally built in CS 360. Every enhancement in this portfolio is applied to this single codebase.</p>
+    </div>
+    <div class="artifact-grid">
+      <div class="artifact-card">
+        <p class="card-label">Original</p>
+        <h3>WeightTracker (CS 360)</h3>
+        <p>The project as submitted for Mobile Architecture and Programming. Functional, met the CS 360 requirements, but had structural, algorithmic, and database gaps that opened the door to this capstone.</p>
+        <div class="card-links">
+          <a href="https://github.com/cp18-sudo/CS-360/tree/main" target="_blank" rel="noopener">View on GitHub (main) ↗</a>
+          <a href="assets/code/WeightTracker_Original.zip" download>Download source (.zip)</a>
+        </div>
+      </div>
+      <div class="artifact-card artifact-card-primary">
+        <p class="card-label">Enhanced</p>
+        <h3>WeightTracker 4.0 (Capstone)</h3>
+        <p>The rebuilt version. MVVM architecture, sliding-window trend analysis, a three-table schema with foreign keys, salted password hashing, and a full suite of unit, Robolectric, and instrumented tests.</p>
+        <div class="card-links">
+          <a href="https://github.com/cp18-sudo/CS-360/tree/capstone" target="_blank" rel="noopener">View on GitHub (capstone) ↗</a>
+          <a href="assets/code/WeightTracker_Enhanced.zip" download>Download source (.zip)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== -->
+<!-- ENHANCEMENTS                                                    -->
+<!-- =============================================================== -->
+<section id="enhancements" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Three Enhancements</h2>
+      <p class="section-sub">One artifact, three perspectives. Each enhancement touches a different area of computer science practice.</p>
+    </div>
+    <div class="enhance-index">
+      <a href="#enhancement-one"><span>01</span><div><strong>Software Design &amp; Engineering</strong><em>MVVM refactor, Repository, full CRUD, centralized validation</em></div></a>
+      <a href="#enhancement-two"><span>02</span><div><strong>Algorithms &amp; Data Structures</strong><em>TrendCalculator, sliding-window rolling averages, TreeMap ordering</em></div></a>
+      <a href="#enhancement-three"><span>03</span><div><strong>Databases</strong><em>Three-table schema, foreign keys, indexes, salted password hashing</em></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ENHANCEMENT ONE -->
+<section id="enhancement-one" class="section section-enh">
+  <div class="section-inner">
+    <div class="enh-header">
+      <span class="enh-num">01</span>
+      <div>
+        <p class="enh-category">Software Design &amp; Engineering</p>
+        <h2>MVVM refactor</h2>
+      </div>
+    </div>
+    <div class="enh-body">
+      <div class="prose">
+        <p>The artifact I selected for this enhancement was my WeightTracker Android application from CS 360: Mobile Architecture and Programming. This app was originally created during that course and was designed to let users create an account, log in, and track their daily weight entries in a scrollable list. The data is stored locally using Room and SQLite, and the app also included an SMS permission screen for goal notifications. At the time, the project met the class requirements and functioned the way it was supposed to, but after revisiting it for CS 499, it was clear that there were several areas where the overall design and structure could be improved.</p>
+        <p>I chose this artifact for the software design and engineering category because it gave me a strong opportunity to show real improvement in both code quality and application structure. The original version worked, but the way it was built made it hard to maintain, extend, or hand off to another developer. A lot of the logic was packed into one large onCreate method, especially in DataGridActivity.java, where UI setup, database access, input parsing, date formatting, goal checking, and list management were all handled in one place. It got the job done, but it was not clean, scalable, or professional. That made it a good candidate for enhancement because I could take something functional and turn it into something much more structured and maintainable.</p>
+        <p>The biggest improvement I made was refactoring the app to use the MVVM architecture pattern. In the enhanced version, the Activities are responsible only for UI-related work, such as finding views, showing dialogs, and displaying toast messages. The ViewModels now handle screen logic, input validation, and communication with the data layer. I also added a WeightRepository to separate the ViewModels from the Room DAOs, which means the Activities no longer touch the database directly. This change made the code much easier to follow and gave each class a more focused purpose. The original project had 10 Java files, while the enhanced version has 18, with each file handling a specific responsibility instead of trying to do everything at once.</p>
+        <p>Another important improvement was adding single-consumption UI events. LiveData is useful for observing state changes, but one issue with it is that it can replay the last value after configuration changes like screen rotation. In this app, that could cause actions like a successful login event to fire again and trigger navigation a second time. To fix that, I added a SingleEvent wrapper class so that events such as toast messages and navigation actions are consumed only once. It is a small addition, but it fixes a real issue and shows a better understanding of how Android state management works beyond the basics.</p>
+        <p>I also improved input validation significantly. In the original project, validation was minimal. It mainly checked whether fields were empty, and for weight values it used Double.parseDouble() without proper exception handling or range checking. That meant invalid input could crash the app or allow unrealistic values to be saved. In the enhanced version, I created an InputValidator utility class along with a WeightParseResult type so that validation returns a structured result instead of throwing errors or silently accepting bad input. I also moved error message references into Android string resources instead of hardcoding them into the Java files. That helped keep validation more consistent and made the app feel more polished overall.</p>
+        <p>One of the most important fixes was implementing the missing update operation. The original app supported create, read, and delete, but not update, even though CRUD functionality was expected in the original course project. Users had no way to edit an existing weight entry once it was saved. To correct that, I added an @Update method to WeightDao, a setId() method on WeightEntry, an edit button for each list row, an edit dialog that pre-fills the current value, and the full update flow through the ViewModel and Repository. This completed the CRUD requirement and made the app more realistic as a usable tracking tool.</p>
+        <p>I also updated the RecyclerView implementation by replacing the original adapter logic with a ListAdapter backed by DiffUtil. In the earlier version, the delete listener captured a position value directly from onBindViewHolder, which could lead to the wrong item being removed if the list changed quickly. With DiffUtil, the list now updates more efficiently and more safely, because it calculates the minimal changes between old and new data. I also updated click handling to use getAdapterPosition() with a NO_POSITION guard, which eliminates the stale-position problem. On top of that, I standardized threading across the app so that all database work now goes through DbExecutors.io() by way of the Repository. The original version used different threading approaches in different places, which was inconsistent and harder to manage.</p>
+        <p>Another area I improved was testing and documentation. The original project had no unit tests, so I added JUnit tests for InputValidator, SingleEvent, and WeightParseResult. These tests cover cases like null input, empty values, whitespace, non-numeric values, and out-of-range data. That helped verify that the new validation logic works the way it should. I also cleaned up the documentation by adding Javadoc comments throughout the codebase. Instead of writing comments that sounded like assignment notes, I focused on making the comments explain the actual purpose of the code in a way another developer could understand.</p>
+        <p>This enhancement aligns most strongly with Course Outcome 4, which focuses on using well-founded and innovative techniques, skills, and tools in computing practices. The refactor introduced industry-standard Android patterns such as MVVM, ViewModels, LiveData, a Repository layer, and DiffUtil-backed list rendering. These are all techniques that make the solution more professional and closer to what would be expected in a real development environment. It also supports Outcome 2 because the narrative and the codebase itself both communicate technical decisions more clearly than before. Outcome 1 is supported through the improved maintainability of the project, since the refactored structure is much easier for another developer to follow. Outcome 5 is also supported through stronger validation and better awareness of issues like improper input handling and plain-text password storage. I identified the password issue as a remaining gap rather than pretending it was already solved, which reflects a more realistic security mindset. I do not think Outcome 3 is the strongest fit for this enhancement, since algorithmic problem-solving will be better demonstrated in my next enhancement when I add trend analysis and rolling averages.</p>
+        <p>The biggest thing I learned from this enhancement was how much easier development becomes when logic is separated properly. In the original app, adding even one new feature meant adding more code to an already overloaded Activity. After the refactor, building the edit feature felt much more straightforward because each layer had a clear role. I could update the DAO, expose the function through the Repository, validate the data in the ViewModel, and let the Activity handle only the user interaction. That separation made the whole app easier to think through and easier to improve.</p>
+        <p>One challenge that stood out to me was understanding the SingleEvent issue. At first, it seemed minor, but once I looked deeper into how LiveData handles configuration changes, it became clear that replayed values could create real bugs. That was a good reminder that it is not enough to know how to use a framework at a surface level. You also need to understand how it behaves underneath if you want to build something stable. I had a similar experience with DiffUtil. The original notifyDataSetChanged() approach worked, but it was a blunt fix. Moving to ListAdapter and DiffUtil made the updates more efficient and forced me to think more carefully about how identity and content are represented in a list-based UI.</p>
+        <p>I also learned that professional documentation matters, but only when it serves the code. My first instinct was to write comments that connected everything back to the rubric and course outcomes, but that is not how real source code should read. Once I rewrote the comments to explain technical intent instead, the project felt a lot cleaner and more professional. Looking ahead, the architecture I built here should make the next two enhancements easier to implement. The Repository and ViewModel structure already gives me a good foundation for adding trend analysis in the algorithms enhancement and expanding the database design in the next phase. That is really the whole point of good software design in the first place. It is not just about making the code look cleaner. It is about making future work less annoying, which is rare and beautiful in computer science.</p>
+      </div>
+      <aside class="enh-aside">
+        <p class="aside-label">Technical summary</p>
+        <ul>
+          <li><strong>Pattern:</strong> MVVM with Repository as the seam between ViewModels and Room DAOs</li>
+          <li><strong>New utilities:</strong> <code>InputValidator</code>, <code>WeightParseResult</code>, <code>SingleEvent</code></li>
+          <li><strong>RecyclerView:</strong> <code>ListAdapter</code> + <code>DiffUtil</code>; <code>getAdapterPosition</code> with <code>NO_POSITION</code> guard</li>
+          <li><strong>CRUD completion:</strong> added <code>@Update</code> to <code>WeightDao</code> plus edit dialog</li>
+          <li><strong>Outcomes:</strong> 4, 1</li>
+        </ul>
+        <div class="aside-links">
+          <a href="assets/downloads/CS499_Enhancement_One_Narrative.docx" download>Download narrative (.docx)</a>
+          <a href="https://github.com/cp18-sudo/CS-360/tree/capstone" target="_blank" rel="noopener">View enhanced code ↗</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ENHANCEMENT TWO -->
+<section id="enhancement-two" class="section section-enh">
+  <div class="section-inner">
+    <div class="enh-header">
+      <span class="enh-num">02</span>
+      <div>
+        <p class="enh-category">Algorithms &amp; Data Structures</p>
+        <h2>TrendCalculator</h2>
+      </div>
+    </div>
+    <div class="enh-body">
+      <div class="prose">
+        <p>The artifact for this enhancement is the same WeightTracker Android application from CS 360: Mobile Architecture and Programming that I have been working with throughout the capstone. The app lets users create an account, log in, and track daily weight entries in a scrollable list, with data stored locally using Room and SQLite. In Enhancement One, I refactored the app into MVVM with ViewModels, a Repository layer, LiveData, and proper input validation. That gave the codebase a clean layered structure that made this second enhancement a lot easier to build on top of.</p>
+        <p>I selected this artifact for the algorithms and data structures category because the original app collected weight data but didn't do anything useful with it. My CS 360 proposal described progress charts, visual trends, and goal tracking, but the finished product was just a flat list of numbers with no analysis or feedback. The goal check was a single line comparing a raw entry to a hardcoded 150.0 using ==, which does not work well because daily weight fluctuates too much for an exact match and == on doubles has floating-point precision issues. That gap between the data being collected and any real processing made it a good candidate for this enhancement.</p>
+        <p>The biggest piece of this enhancement is a TrendCalculator class that does all the trend analysis on the weight entries. It starts by loading entries into a TreeMap keyed by date string, which keeps them in chronological order automatically at O(log n) per insert and supports efficient date-range lookups through subMap(). From there it computes 7-day rolling averages using an incremental sliding window that keeps a running sum instead of re-scanning at every position, making the whole pass O(n). When there are at least 14 entries, it calculates week-over-week deltas by sampling the rolling averages at 7-entry intervals, and generates WARNING or CRITICAL alerts when changes exceed a threshold that defaults to 2 pounds per week. Below 14 entries, it suppresses the weekly data and falls back to comparing the first and last rolling averages for trend direction, so users still get useful feedback from their first week of logging. The final stage replaces the old goal check by comparing the rolling average against the target using &lt;= instead of exact equality, and the ViewModel tracks whether the goal was previously reached so the notification only fires once on a false-to-true crossing instead of on every add operation.</p>
+        <p>All of the analysis results are wrapped in simple classes that are set at construction time and cannot be changed after. RollingAverage, WeeklyChange, TrendAlert, and WeightTrendResult capture their values through constructors and wrap the lists in Collections.unmodifiableList() so nothing downstream can accidentally mutate the results. Integrating this with the MVVM architecture from Enhancement One was pretty straightforward. I added a computeTrend() method to WeightRepository that fetches entries chronologically and runs the analysis, and DataGridViewModel exposes the result as LiveData and calls refreshTrend() after every CRUD operation. DataGridActivity observes the trend LiveData and renders a summary card above the RecyclerView with the rolling average, trend direction, and when there is enough data, the weekly change and alerts.</p>
+        <p>I also added a test suite with over 25 unit tests covering null and empty input, sorted map construction with out-of-order and duplicate entries, sliding window math, the weekly change suppression for fewer than 14 entries, alert thresholds, trend direction using both the weekly-change and rolling-average paths, goal comparison edge cases, a full-pipeline integration test with realistic data, and immutability verification. Because TrendCalculator has no Android dependencies, everything runs as plain JUnit without an emulator.</p>
+        <p>This enhancement aligns most strongly with Course Outcome 3, which focuses on designing computing solutions using algorithmic principles while managing trade-offs. The whole thing is built around that: the sliding window for O(n) rolling averages, TreeMap vs HashMap with documented trade-offs, the threshold-based alert system, and the trend-based goal comparison replacing exact equality. Outcome 4 is also supported through patterns like immutable result objects, pure computation separated from framework dependencies, and a design that makes the algorithm reusable. Outcome 2 is supported through the narrative and through code comments that explain design decisions. Outcome 1 gets coverage from the separation of concerns making it easier for another developer to follow. I do not think Outcome 5 is the strongest fit for this enhancement since the security-focused work will come in Enhancement Three with password hashing and database constraints.</p>
+        <p>The biggest thing I learned was how much good architecture matters when you are adding new features. After the MVVM refactor, the trend logic lives in its own class with no Android dependencies, and I never had to touch the list display or CRUD code while building it. The main challenge was handling the boundary between having enough data for rolling averages and having enough for weekly comparisons. My first approach showed weekly deltas too early from partial data, which felt misleading. Tightening that to 14 entries with a fallback trend direction made the UI more honest about what it was actually showing. I was also surprised how naturally TreeMap fit this use case. I originally planned a sorted ArrayList, but once I thought about date-range queries and subMap(), the trade-off was clearly worth it. Looking ahead, the architecture should plug directly into Enhancement Three when I add the Goal entity, since swapping the hardcoded goal for a database-backed value is a one-line change in the ViewModel. That is the whole point of building things in layers.</p>
+      </div>
+      <aside class="enh-aside">
+        <p class="aside-label">Technical summary</p>
+        <ul>
+          <li><strong>Core class:</strong> <code>TrendCalculator</code>, pure Java, no Android dependencies</li>
+          <li><strong>Ordering:</strong> <code>TreeMap&lt;String, Double&gt;</code> keyed by yyyy-MM-dd for chronological order and <code>subMap()</code> range queries</li>
+          <li><strong>Algorithm:</strong> sliding-window rolling average, O(n) after sort</li>
+          <li><strong>Outputs:</strong> immutable <code>RollingAverage</code>, <code>WeeklyChange</code>, <code>TrendAlert</code>, <code>WeightTrendResult</code></li>
+          <li><strong>Outcomes:</strong> 3, 4, 2</li>
+        </ul>
+        <div class="aside-links">
+          <a href="assets/downloads/CS499_Enhancement_Two_Narrative.docx" download>Download narrative (.docx)</a>
+          <a href="https://github.com/cp18-sudo/CS-360/tree/capstone" target="_blank" rel="noopener">View enhanced code ↗</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ENHANCEMENT THREE -->
+<section id="enhancement-three" class="section section-enh">
+  <div class="section-inner">
+    <div class="enh-header">
+      <span class="enh-num">03</span>
+      <div>
+        <p class="enh-category">Databases</p>
+        <h2>Schema and security</h2>
+      </div>
+    </div>
+    <div class="enh-body">
+      <div class="prose">
+        <p>The artifact for this enhancement is the same WeightTracker Android application from CS 360: Mobile Architecture and Programming that I have been improving throughout the capstone. The app lets users create an account, log in, and track daily weight entries in a scrollable list, with data stored locally using Room and SQLite. In Enhancement One, I refactored the app into MVVM with ViewModels, a Repository layer, LiveData, reusable validation, and cleaner UI events. In Enhancement Two, I added a TrendCalculator that produces rolling averages, weekly change analysis, alerts, and a better goal comparison. Those earlier enhancements gave this third enhancement a stronger foundation because the database changes touch the entities, DAOs, repository, ViewModels, and user interface.</p>
+        <p>I selected this artifact for the databases category because the original CS 360 version had several database gaps that became clear during my first code review. The weight-tracking option required three tables: one for users, one for daily weight entries, and one for a goal weight. My original app only had users and weights, while the goal was represented by a hardcoded value in the Activity. There was also no relationship between a user and a weight entry, so multiple users on the same device would share the same list of entries. Finally, passwords were stored as plain text, which created an obvious security and privacy weakness. This enhancement focused on correcting those database design issues while keeping the app understandable as a senior college project.</p>
+        <p>The first major change was password hashing. I added a PasswordHasher utility class that uses SHA-256 with a per-user salt. When a user registers, the app generates sixteen random bytes with SecureRandom, combines that salt with the submitted password, hashes the result, and stores the value as a Base64-encoded salt and hash separated by a colon. During login, LoginViewModel retrieves the user by username and calls PasswordHasher.verifyPassword to compare the submitted password against the stored salted hash. The comparison uses MessageDigest.isEqual, which helps reduce timing leakage compared with a simple string comparison. This is not the same as a full production authentication system, but it is a clear improvement over storing readable passwords in SQLite and it shows a stronger security mindset.</p>
+        <p>The second major change was the schema redesign. I added a Goal entity, which gives the project the third table the original CS 360 requirement called for. Goal stores the userId, target weight, and creation date. I also updated WeightEntry so each row now has a userId foreign key back to the users table. Both the weights and goals tables use cascade delete so that if a user were ever removed, their dependent rows would not be left behind as orphan data. I also added indexes on userId and a composite index on userId and date for weight entries, which supports the way the app filters and analyzes entries for one user at a time. Feedback from earlier milestones pushed me to document these trade-offs inside the code itself rather than only in the narrative, so the reasoning behind each decision is now visible to anyone reading the source.</p>
+        <p>Threading user ownership through the app was one of the most important parts of the enhancement. LoginActivity passes the logged-in username to DataGridActivity through an Intent extra. DataGridActivity passes that userId into DataGridViewModel through the ViewModel factory, and the ViewModel passes it into repository calls. The DAO queries are now scoped by userId, so one user's entries and goals stay separate from another user's data on the same device. I also replaced the hardcoded goal with a Set Goal dialog. The goal value is validated with the same InputValidator style used elsewhere in the app, saved through GoalDao, and then used by the trend analysis so the goal-reached event is based on a real user-defined target.</p>
+        <p>I made one practical trade-off in AppDatabase by using fallbackToDestructiveMigration when moving the schema to version 2. In this capstone version, that keeps the app from crashing if an older local database exists. The original schema did not connect weight rows to users, so a real migration would need a careful decision about how to assign old entries to an account. In a production app, I would replace destructive migration with an explicit migration strategy and test it with real upgrade data. For this school project, the trade-off is acceptable because the main goal is demonstrating the improved schema and database relationships, and the decision is called out honestly in both the code and this narrative.</p>
+        <p>I also expanded the testing story for this database enhancement. The existing unit tests already covered validation, SingleEvent behavior, password hashing, and the trend calculator. I added a Robolectric database test that can run from Android Studio without a connected emulator. That test uses an in-memory Room database and verifies user-scoped weight queries, foreign key enforcement, newest-goal behavior, goal updates, and repository trend computation through Room. I also added an instrumented database test suite under androidTest for running against a real Android runtime when a device or emulator is available. Those instrumented tests cover duplicate username handling, scoped and ordered weight queries, inclusive date ranges, update and delete behavior, foreign key failures, goal CRUD, repository trend analysis, and LiveData emission from the Room query.</p>
+        <p>This enhancement aligns most strongly with Course Outcome 5 because it focuses on privacy, security, and data integrity. Storing salted password hashes, scoping all entries by userId, enforcing foreign keys, and using cascade delete all come from thinking about how the app's data could be misused or become inconsistent. It also supports Outcome 4 through standard Android database practices with Room entities, DAOs, indexes, LiveData queries, and a repository layer. Outcome 3 is shown through the indexing and relationship trade-offs, especially choosing userId and date as the main query path for the time-series data. Outcomes 1 and 2 are supported by the cleaner organization and the comments and narrative that make the code easier to explain during a review.</p>
+        <p>The biggest thing I learned from this enhancement is that a database change is never isolated once an app is already layered. Adding userId to WeightEntry meant changing the entity, DAO, repository, ViewModel, Activity, and tests. It was not hard in any single place, but it required consistency across the whole app. I also learned that testing the database layer matters more once the app has real relationships and constraints, because those constraints can silently pass in development and only surface under certain conditions at runtime. Incorporating instructor feedback from previous milestones helped me get ahead of those issues by confirming the exact entity structure and DAO signatures before writing any of the migration and test code. The final version is still simple enough to fit the course project, but it now represents the original idea much better: users have their own data, goal weights are actually stored, and password storage is handled with more care than the first version.</p>
+      </div>
+      <aside class="enh-aside">
+        <p class="aside-label">Technical summary</p>
+        <ul>
+          <li><strong>Schema:</strong> three tables — users, weights (userId FK), goals (userId FK); cascade delete on both</li>
+          <li><strong>Indexes:</strong> standalone on userId, composite on (userId, date)</li>
+          <li><strong>Password hashing:</strong> <code>PasswordHasher</code> with SHA-256 + 16-byte <code>SecureRandom</code> salt; <code>MessageDigest.isEqual</code> for constant-time comparison</li>
+          <li><strong>User ownership:</strong> userId threaded through Activity → ViewModel → Repository → DAO</li>
+          <li><strong>Testing:</strong> Robolectric in-memory database tests + instrumented androidTest suite</li>
+          <li><strong>Outcomes:</strong> 5, 4, 3</li>
+        </ul>
+        <div class="aside-links">
+          <a href="assets/downloads/CS499_Enhancement_Three_Narrative_Final.docx" download>Download narrative (.docx)</a>
+          <a href="https://github.com/cp18-sudo/CS-360/tree/capstone" target="_blank" rel="noopener">View enhanced code ↗</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== -->
+<!-- OUTCOMES MATRIX                                                 -->
+<!-- =============================================================== -->
+<section id="outcomes" class="section">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Course Outcome Coverage</h2>
+      <p class="section-sub">How the capstone artifacts demonstrate the five CS program outcomes.</p>
+    </div>
+    <div class="outcomes-table" role="table">
+      <div class="row head" role="row">
+        <div role="columnheader">Outcome</div>
+        <div role="columnheader">Demonstrated in</div>
+      </div>
+      <div class="row" role="row">
+        <div role="cell"><strong>1.</strong> Collaborative environments for decision-making in CS</div>
+        <div role="cell">Code review video, in-code documentation, Enhancement 1 readability work</div>
+      </div>
+      <div class="row" role="row">
+        <div role="cell"><strong>2.</strong> Professional-quality oral, written, and visual communications</div>
+        <div role="cell">Code review video, three narratives, professional self-assessment, this ePortfolio</div>
+      </div>
+      <div class="row" role="row">
+        <div role="cell"><strong>3.</strong> Algorithmic principles and design trade-offs</div>
+        <div role="cell">Enhancement 2: TreeMap vs HashMap trade-off, sliding-window O(n) analysis, threshold-based alerts</div>
+      </div>
+      <div class="row" role="row">
+        <div role="cell"><strong>4.</strong> Well-founded techniques, skills, and tools</div>
+        <div role="cell">All three enhancements: MVVM, Room, Repository, DiffUtil, LiveData, JUnit, Robolectric</div>
+      </div>
+      <div class="row" role="row">
+        <div role="cell"><strong>5.</strong> Security mindset</div>
+        <div role="cell">Enhancement 3: salted SHA-256 hashing, constant-time compare, foreign keys, cascade delete, user-scoped queries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== -->
+<!-- DOWNLOADS                                                       -->
+<!-- =============================================================== -->
+<section id="downloads" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Downloads</h2>
+      <p class="section-sub">Everything in one place. Narratives, self-assessment, slides, and source.</p>
+    </div>
+    <div class="downloads-grid">
+      <div class="dl-group">
+        <h3>Written</h3>
+        <ul>
+          <li><a href="assets/downloads/CS499_Professional_Self_Assessment.docx" download>Professional Self-Assessment (.docx)</a></li>
+          <li><a href="assets/downloads/CS499_Enhancement_One_Narrative.docx" download>Enhancement One Narrative (.docx)</a></li>
+          <li><a href="assets/downloads/CS499_Enhancement_Two_Narrative.docx" download>Enhancement Two Narrative (.docx)</a></li>
+          <li><a href="assets/downloads/CS499_Enhancement_Three_Narrative_Final.docx" download>Enhancement Three Narrative (.docx)</a></li>
+        </ul>
+      </div>
+      <div class="dl-group">
+        <h3>Visual</h3>
+        <ul>
+          <li><a href="assets/downloads/CS_499_Final_Code_Review.pptx" download>Code Review Slides (.pptx)</a></li>
+          <li><a href="https://youtu.be/q8Pq-gcQMpo" target="_blank" rel="noopener">Code Review Video (YouTube) ↗</a></li>
+        </ul>
+      </div>
+      <div class="dl-group">
+        <h3>Source code</h3>
+        <ul>
+          <li><a href="assets/code/WeightTracker_Original.zip" download>WeightTracker — Original (.zip)</a></li>
+          <li><a href="assets/code/WeightTracker_Enhanced.zip" download>WeightTracker — Enhanced (.zip)</a></li>
+          <li><a href="https://github.com/cp18-sudo/CS-360" target="_blank" rel="noopener">Repository on GitHub ↗</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-name">Christopher Prempeh</p>
+    <p class="footer-meta">CS 499 Computer Science Capstone · Southern New Hampshire University · Spring 2026</p>
+    <p class="footer-repo"><a href="https://github.com/cp18-sudo" target="_blank" rel="noopener">github.com/cp18-sudo</a></p>
+  </div>
+</footer>
 
 </body>
 </html>
