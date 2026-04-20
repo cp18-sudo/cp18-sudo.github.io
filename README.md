@@ -1,10 +1,10 @@
 # cp18-sudo.github.io
 
-Christopher Prempeh — Computer Science Capstone ePortfolio
+Christopher Prempeh | Computer Science Capstone ePortfolio
 
 ## About
 
-CS 499 Computer Science Capstone at Southern New Hampshire University, Spring 2026. Portfolio site covering three enhancements applied to the WeightTracker Android application: software design and engineering, algorithms and data structures, and databases.
+CS 499 Computer Science Capstone at Southern New Hampshire University, Spring 2026. This portfolio site covers three enhancements I applied to the WeightTracker Android application: software design and engineering, algorithms and data structures, and databases.
 
 Live site: https://cp18-sudo.github.io/
 
@@ -22,7 +22,7 @@ Live site: https://cp18-sudo.github.io/
     │   └── CS_499_Final_Code_Review.pptx
     └── code/                   Source code zips
         ├── WeightTracker_Original.zip     Original CS 360 submission
-        └── WeightTracker_Enhanced.zip     Capstone enhanced version
+        └── WeightTracker_Enhanced.zip     Weight Tracker 2 capstone version
 ```
 
 ## Related repository

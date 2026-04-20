@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Christopher Prempeh — CS 499 Capstone ePortfolio</title>
-<meta name="description" content="CS 499 Computer Science Capstone ePortfolio — WeightTracker Android application enhancements across software design, algorithms, and databases.">
+<title>Christopher Prempeh | CS 499 Capstone ePortfolio</title>
+<meta name="description" content="CS 499 Computer Science Capstone ePortfolio for WeightTracker Android application enhancements in software design, algorithms, and databases.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   <div class="hero-inner">
     <p class="eyebrow">CS 499 Computer Science Capstone · Southern New Hampshire University</p>
     <h1>Christopher<br>Prempeh</h1>
-    <p class="lede">A capstone ePortfolio built around one artifact across three enhancements: software design and engineering, algorithms and data structures, and databases.</p>
+    <p class="lede">This capstone ePortfolio uses one main artifact to show three enhancements: software design and engineering, algorithms and data structures, and databases.</p>
     <div class="hero-meta">
       <span>Spring 2026</span>
       <span>·</span>
@@ -48,7 +48,7 @@
     <div class="section-header">
       <span class="section-num">01</span>
       <h2>Professional Self-Assessment</h2>
-      <p class="section-sub">A reflection on the program, the portfolio, and what the two have shaped.</p>
+      <p class="section-sub">My reflection on the program, the portfolio, and what I learned while building it.</p>
     </div>
     <div class="prose">
         <p>My name is Christopher Prempeh, and this is the professional self-assessment for my Computer Science Capstone at Southern New Hampshire University. I came to SNHU after earning my associate degree in computer science from Rowan-Cabarrus Community College, which means I have been studying computer science in some form for about four years. The time at SNHU in particular pushed me further than I expected. The upper-level courses were not just more of the same. They forced me to think about software as a system rather than a collection of files that happen to run, and I think that shift is what the ePortfolio I am introducing here is really about. What I have put together on this site is not a highlight reel of assignments. It is a demonstration of how I think about building software at this point in my education, and it is the best picture I can give of the kind of work I want to do professionally.</p>
@@ -113,8 +113,8 @@
       </div>
       <div class="artifact-card artifact-card-primary">
         <p class="card-label">Enhanced</p>
-        <h3>WeightTracker 4.0 (Capstone)</h3>
-        <p>The rebuilt version. MVVM architecture, sliding-window trend analysis, a three-table schema with foreign keys, salted password hashing, and a full suite of unit, Robolectric, and instrumented tests.</p>
+        <h3>Weight Tracker 2 (Capstone)</h3>
+        <p>My rebuilt version. It adds MVVM architecture, sliding-window trend analysis, a three-table schema with foreign keys, salted password hashing, and a full suite of unit, Robolectric, and instrumented tests.</p>
         <div class="card-links">
           <a href="https://github.com/cp18-sudo/CS-360/tree/capstone" target="_blank" rel="noopener">View on GitHub (capstone) ↗</a>
           <a href="assets/code/WeightTracker_Enhanced.zip" download>Download source (.zip)</a>
@@ -248,10 +248,10 @@
       <aside class="enh-aside">
         <p class="aside-label">Technical summary</p>
         <ul>
-          <li><strong>Schema:</strong> three tables — users, weights (userId FK), goals (userId FK); cascade delete on both</li>
+          <li><strong>Schema:</strong> three tables: users, weights (userId FK), goals (userId FK); cascade delete on both</li>
           <li><strong>Indexes:</strong> standalone on userId, composite on (userId, date)</li>
           <li><strong>Password hashing:</strong> <code>PasswordHasher</code> with SHA-256 + 16-byte <code>SecureRandom</code> salt; <code>MessageDigest.isEqual</code> for constant-time comparison</li>
-          <li><strong>User ownership:</strong> userId threaded through Activity → ViewModel → Repository → DAO</li>
+          <li><strong>User ownership:</strong> userId threaded through Activity, ViewModel, Repository, and DAO</li>
           <li><strong>Testing:</strong> Robolectric in-memory database tests + instrumented androidTest suite</li>
           <li><strong>Outcomes:</strong> 5, 4, 3</li>
         </ul>
@@ -333,8 +333,8 @@
       <div class="dl-group">
         <h3>Source code</h3>
         <ul>
-          <li><a href="assets/code/WeightTracker_Original.zip" download>WeightTracker — Original (.zip)</a></li>
-          <li><a href="assets/code/WeightTracker_Enhanced.zip" download>WeightTracker — Enhanced (.zip)</a></li>
+          <li><a href="assets/code/WeightTracker_Original.zip" download>WeightTracker Original (.zip)</a></li>
+          <li><a href="assets/code/WeightTracker_Enhanced.zip" download>Weight Tracker 2 Enhanced (.zip)</a></li>
           <li><a href="https://github.com/cp18-sudo/CS-360" target="_blank" rel="noopener">Repository on GitHub ↗</a></li>
         </ul>
       </div>
